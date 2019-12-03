@@ -4,7 +4,9 @@ class LogsController < ApplicationController
         @logs = Log.all 
     end
 
-    
+    def show
+        @log = Log.find(params[:id])
+    end
 
     def new
         @log = Log.new
@@ -13,7 +15,7 @@ class LogsController < ApplicationController
     def create
         @log = Log.new(log_params)
         if @log.save
-            redirect_to logs_path
+            redirect_to log_path(@log)
         else
             render :new 
         end
