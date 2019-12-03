@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_220046) do
+ActiveRecord::Schema.define(version: 2019_12_03_225847) do
 
   create_table "dive_sites", force: :cascade do |t|
     t.string "name"
@@ -29,7 +29,6 @@ ActiveRecord::Schema.define(version: 2019_12_03_220046) do
     t.integer "visibility"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "dive_number"
     t.integer "dive_site_id"
   end
 
