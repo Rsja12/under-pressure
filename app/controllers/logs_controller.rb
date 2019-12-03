@@ -9,12 +9,16 @@ class LogsController < ApplicationController
     end
 
     # def create
-        
+    #     @log = Log.new(log_params)
+    #     if @log.save
+    #         redirect_to ''
+    #     end
     # end
 
-    # private
+    private
 
-    # def log_params
-    #     require(:log).permit()
-    # end
+    def log_params
+        require(:log).permit(:date, :remarks, :dive_site_name, :dive_buddy, :depth, :dive_time, :visibility, :dive_number)
+    end
+
 end
