@@ -1,7 +1,28 @@
 <%= form_for(@log) do |f| %>
 
+    <%= f.label :dive_number %>
+    <%= f.number_field :dive_number %><br><br>
+
     <%= f.label :date %>
-    <%= f.datetime_select :date %>
+    <%= f.datetime_select :date %><br><br>
+
+    <%= f.label :dive_site_name %>
+    <%= f.text_field :dive_site_name %><br><br>
+
+    <%= f.label :dive_buddy %>
+    <%= f.text_field :dive_buddy %><br><br>
+
+    <%= f.label :depth %>
+    <%= f.number_field :depth %><br><br>
+
+    <%= f.label :dive_time %>
+    <%= f.number_field :dive_time %><br><br>
+
+    <%= f.label :visibility %>
+    <%= f.number_field :visibility %><br><br>
+
+    <%= f.label :remarks %>
+    <%= f.text_field :remarks %><br><br>
 
 
 <% end %>
