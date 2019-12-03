@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_192804) do
+ActiveRecord::Schema.define(version: 2019_12_03_193005) do
 
   create_table "dive_sites", force: :cascade do |t|
     t.string "name"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_192804) do
   create_table "logs", force: :cascade do |t|
     t.datetime "date"
     t.string "remarks"
-    t.string "dive_site"
+    t.string "dive_site_name"
     t.string "dive_buddy"
     t.integer "user_id"
     t.integer "depth"
