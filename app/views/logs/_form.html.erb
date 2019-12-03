@@ -1,8 +1,5 @@
 <%= form_for(@log) do |f| %>
 
-    <%= f.label :dive_number %>
-    <%= f.number_field :dive_number %><br><br>
-
     <%= f.label :date %>
     <%= f.datetime_select :date %><br><br>
 
@@ -25,5 +22,5 @@
     <%= f.text_area :remarks %><br><br>
 
     <%= f.submit %>
-    
+
 <% end %>
