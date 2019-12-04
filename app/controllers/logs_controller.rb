@@ -23,10 +23,8 @@ class LogsController < ApplicationController
 
     private
 
-
-
     def log_params
-        params.require(:log).permit(:date, :remarks, :dive_site_name, :dive_buddy, :depth, :dive_time, :visibility, :user_id, :dive_site_id)
+        params.require(:log).permit(:date, :remarks, :dive_buddy, :depth, :dive_time, :visibility, :user_id, :dive_site_id, dive_site_attributes: [:name])
     end
 
 end
