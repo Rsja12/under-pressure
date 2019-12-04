@@ -5,11 +5,12 @@ class LogsController < ApplicationController
     end
 
     def show
-        @log = Log.find(params[:id])
+        @log = Log.find_by(id: params[:id])
     end
 
     def new
         @log = Log.new
+        @log.build_dive_site
     end
 
     def create
@@ -17,6 +18,7 @@ class LogsController < ApplicationController
         if @log.save
             redirect_to log_path(@log)
         else
+            @log.build_dive_site
             render :new 
         end
     end

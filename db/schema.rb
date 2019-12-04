@@ -19,16 +19,16 @@ ActiveRecord::Schema.define(version: 2019_12_04_004529) do
   end
 
   create_table "logs", force: :cascade do |t|
-    t.datetime "date"
-    t.text "remarks"
-    t.string "dive_buddy"
     t.integer "user_id"
+    t.integer "dive_site_id"
+    t.datetime "date"
+    t.string "dive_buddy"
     t.integer "depth"
     t.integer "dive_time"
     t.integer "visibility"
+    t.text "remarks"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "dive_site_id"
   end
 
   create_table "users", force: :cascade do |t|
