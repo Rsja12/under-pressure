@@ -1,6 +1,5 @@
-Test
-<ul>
+<h1>Your Logs</h1>
+
     <% @logs.each do |log| %>
-        <li><%= log.date %></li>
+        <%= link_to "#{log.id} - #{log.dive_site.name}", log_path(log) %><br>
     <% end %>
-</ul>
