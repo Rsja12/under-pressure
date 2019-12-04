@@ -1,10 +1,10 @@
 <%= form_for(@log) do |f| %>
 
     <h3>Select Dive Site</h3>
-    <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, include_blank: "Choose Dive Site" %> <%# is it DiveSite or dive_site??? %>
+    <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, include_blank: "Choose Dive Site" %> 
 
     <h3>Or Add Your Own:</h3>
-    <%= f.fields_for :divesite do |ff| %>
+    <%= f.fields_for :dive_site do |ff| %>
         <%= ff.label "Dive Site Name:" %>
         <%= ff.text_field :name %><br><br>
     <% end %>                     
