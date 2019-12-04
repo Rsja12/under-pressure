@@ -9,19 +9,19 @@
         <%= ff.text_field :name %><br><br>
     <% end %>                     
 
-    <%= f.label :date %>
-    <%= f.datetime_select :date %><br><br>
+    <%= f.label :date %> 
+    <%= f.datetime_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
 
     <%= f.label :dive_buddy %>
     <%= f.text_field :dive_buddy %><br><br>
 
-    <%= f.label :depth %>
+    <%= f.label :depth %> (ft.)
     <%= f.number_field :depth %><br><br>
 
-    <%= f.label :dive_time %>
+    <%= f.label :dive_time %> (min.)
     <%= f.number_field :dive_time %><br><br>
 
-    <%= f.label :visibility %>
+    <%= f.label :visibility %> (ft.)
     <%= f.number_field :visibility %><br><br>
 
     <%= f.label :remarks %>

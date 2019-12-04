@@ -10,7 +10,7 @@ class LogsController < ApplicationController
 
     def new
         @log = Log.new
-        @log.build_dive_site
+        @log.build_dive_site #What does this do? 
     end
 
     def create

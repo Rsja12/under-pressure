@@ -1,7 +1,7 @@
 class DiveSitesController < ApplicationController
 
     def new
-        @dive_site = DiveSite.new
+        @dive_site = DiveSite.new 
     end
 
     def create
