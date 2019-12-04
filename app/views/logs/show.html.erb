@@ -1,7 +1,9 @@
+<h3>Dive # <%= @log.id %></h3>
+<h3>Dive Site: <%= @log.dive_site.name %></h3>
+<h3>Date: <%= @log.date %></h3><br>
 
-<ul>
-    <li><%= @log.depth %></li>
-    <li><%= @log.dive_time %></li>
-    <li><%= @log.visibility %></li>
-    <li><%= @log.remarks %></li>
-</ul>
+Buddy: <%= @log.dive_buddy %><br>
+Depth: -<%= @log.depth %> ft.<br>
+Dive Time: <%= @log.dive_time %> minutes<br>
+Visibility: <%= @log.visibility %> ft.<br><br>
+Remarks: <%= @log.remarks %>
