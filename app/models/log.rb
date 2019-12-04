@@ -8,4 +8,11 @@ class Log < ApplicationRecord
         self.dive_site = DiveSite.find_or_create_by(attributes)
     end
 
+    validates :date, presence: true
+    validates :depth, presence: true
+    validates :dive_buddy, presence: true
+    validates :dive_time, presence: true
+    validates :visibility, presence: true
+    validates :remarks, presence: true
+
 end
