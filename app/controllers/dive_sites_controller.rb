@@ -1,3 +1,3 @@
 class DiveSitesController < ApplicationController
-
+    
 end

@@ -1,7 +1,12 @@
 class LogsController < ApplicationController
 
     def index
-        @logs = Log.all 
+        if @dive_site = DiveSite.find_by(id: params[:dive_site_id])
+            @logs = @dive_site.logs
+            # byebug
+        else
+            @logs = Log.all 
+        end
     end
 
     def show
@@ -14,6 +19,7 @@ class LogsController < ApplicationController
     end
 
     def create
+        
         @log = Log.new(log_params)
         @log.user_id = current_user.id 
         if @log.save
