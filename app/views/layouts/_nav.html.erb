@@ -4,8 +4,7 @@
         <li><%= link_to "Login", new_user_session_path %></li>
         <li><%= link_to "Sign Up", new_user_registration_path %></li>
     <% else %>
-        <li><%= link_to "Log Dive!", new_log_path %></li> <%# Unless user is at this page ? %>
-        <li><%= link_to "Home", root_path %></li>
+        <li><%= link_to "Home", dive_sites_path %></li>
         <li><%= link_to "Logout", destroy_user_session_path, method: "delete" %></li>
     <% end %>
 
