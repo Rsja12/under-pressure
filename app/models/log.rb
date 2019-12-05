@@ -17,5 +17,7 @@ class Log < ApplicationRecord
         end
     end
 
-
+    def time
+        self.date.strftime(" %b %e %Y")
+    end
 end
