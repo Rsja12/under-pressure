@@ -4,7 +4,7 @@
     <%= form_for(@log) do |f| %>
 
      <%= f.label :date %> 
-        <%= f.datetime_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
+        <%= f.date_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
 
         <%= f.label :dive_buddy %>
         <%= f.text_field :dive_buddy %><br><br>
@@ -32,13 +32,13 @@
         <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
 
         <h3>Or Add Your Own:</h3>
-        <%= f.fields_for :dive_site do |ff| %>  <%# Remove lines 3 - 11 for nested new route? %>
+        <%= f.fields_for :dive_site do |ff| %>  
             <%= ff.label "Dive Site Name:" %>
             <%= ff.text_field :name %><br><br>
         <% end %>                     
 
         <%= f.label :date %> 
-        <%= f.datetime_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
+        <%= f.date_select :date %><br><br>  
 
         <%= f.label :dive_buddy %>
         <%= f.text_field :dive_buddy %><br><br>
