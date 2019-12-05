@@ -1,12 +1,10 @@
 
-<%# <% if params[:dive_site_id] %>
-
     <%= form_for(@log) do |f| %>
 
     <% if params[:dive_site_id] %>
         <%= f.hidden_field :dive_site_id %>
     <% else %>
-        <h3>Select Dive Site</h3>
+        <h3>Select Your Dive Site</h3>
         <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
 
         <h3>Or Add Your Own:</h3>
@@ -23,19 +21,19 @@
         <%= f.text_field :dive_buddy %><br><br>
 
         <%= f.label :depth %> (ft.)
-        <%= f.number_field :depth %><br><br>
+        <%= f.number_field :depth, min: 1 %><br><br>
 
         <%= f.label :dive_time %> (min.)
-        <%= f.number_field :dive_time %><br><br>
+        <%= f.number_field :dive_time, min: 1 %><br><br>
 
         <%= f.label :visibility %> (ft.)
-        <%= f.number_field :visibility %><br><br>
+        <%= f.number_field :visibility, min: 1 %><br><br>
 
         <%= f.label :remarks %>
         <%= f.text_area :remarks %><br><br>
 
         <%= f.submit %>
-        
+
     <% end %>
 
     
