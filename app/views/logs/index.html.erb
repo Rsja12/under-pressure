@@ -1,5 +1,13 @@
-<h1>Your Logs</h1>
-
-    <% @logs.each do |log| %>
-        <%= link_to "#{log.id} - #{log.dive_site.name}", log_path(log) %><br>
+<% if @dive_site %>
+    <h1>Your Logs for <%= @dive_site.name %> </h1> 
+        <% @logs.each do |log| %>
+            <%= link_to "#{log.id} - #{log.dive_site.name}", log_path(log) %><br> 
     <% end %>
+<% else %>
+    <h1>Here Are All Of Your Logs</h1> 
+        <% @logs.each do |log| %>
+            <%= link_to log.id, log_path(log) %><br> 
+    <% end %>
+   
+<%end%>
+
