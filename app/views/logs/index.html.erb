@@ -8,5 +8,8 @@
         <% @logs.each do |log| %>
             <%= link_to "Log# #{log.id} - Date: #{log.time}", log_path(log) %><br> 
     <% end %>
-<%end%>
+<%end%><br><br><br>
+
+<%= link_to "Create a new log for this dive site", new_dive_site_log_path(@dive_site.logs) %>
+
 

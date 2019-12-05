@@ -1,32 +1,65 @@
-<%= form_for(@log) do |f| %>
 
-    <h3>Select Dive Site</h3>
-    <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
+<% if params[:dive_site_id] %>
 
-    <h3>Or Add Your Own:</h3>
-    <%= f.fields_for :dive_site do |ff| %>  <%# Remove lines 3 - 11 for nested new route? %>
-        <%= ff.label "Dive Site Name:" %>
-        <%= ff.text_field :name %><br><br>
-    <% end %>                     
+    <%= form_for(@log) do |f| %>
 
-    <%= f.label :date %> 
-    <%= f.datetime_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
+     <%= f.label :date %> 
+        <%= f.datetime_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
 
-    <%= f.label :dive_buddy %>
-    <%= f.text_field :dive_buddy %><br><br>
+        <%= f.label :dive_buddy %>
+        <%= f.text_field :dive_buddy %><br><br>
 
-    <%= f.label :depth %> (ft.)
-    <%= f.number_field :depth %><br><br>
+        <%= f.label :depth %> (ft.)
+        <%= f.number_field :depth %><br><br>
 
-    <%= f.label :dive_time %> (min.)
-    <%= f.number_field :dive_time %><br><br>
+        <%= f.label :dive_time %> (min.)
+        <%= f.number_field :dive_time %><br><br>
 
-    <%= f.label :visibility %> (ft.)
-    <%= f.number_field :visibility %><br><br>
+        <%= f.label :visibility %> (ft.)
+        <%= f.number_field :visibility %><br><br>
 
-    <%= f.label :remarks %>
-    <%= f.text_area :remarks %><br><br>
+        <%= f.label :remarks %>
+        <%= f.text_area :remarks %><br><br>
 
-    <%= f.submit %>
+        <%= f.submit %>
+    <% end %>
+
+    <% else %>
+
+    <%= form_for(@log) do |f| %>
+
+        <h3>Select Dive Site</h3>
+        <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
+
+        <h3>Or Add Your Own:</h3>
+        <%= f.fields_for :dive_site do |ff| %>  <%# Remove lines 3 - 11 for nested new route? %>
+            <%= ff.label "Dive Site Name:" %>
+            <%= ff.text_field :name %><br><br>
+        <% end %>                     
+
+        <%= f.label :date %> 
+        <%= f.datetime_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
+
+        <%= f.label :dive_buddy %>
+        <%= f.text_field :dive_buddy %><br><br>
+
+        <%= f.label :depth %> (ft.)
+        <%= f.number_field :depth %><br><br>
+
+        <%= f.label :dive_time %> (min.)
+        <%= f.number_field :dive_time %><br><br>
+
+        <%= f.label :visibility %> (ft.)
+        <%= f.number_field :visibility %><br><br>
+
+        <%= f.label :remarks %>
+        <%= f.text_area :remarks %><br><br>
+
+        <%= f.submit %>
+    <% end %>   
+
 
 <% end %>
+
+
+
