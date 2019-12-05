@@ -1,7 +1,7 @@
 <%= form_for(@log) do |f| %>
 
     <h3>Select Dive Site</h3>
-    <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, include_blank: "Choose Dive Site" %> 
+    <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
     <%# Selecting site from dropdown doesn't match up with existing dive_site %>
 
     <h3>Or Add Your Own:</h3>
