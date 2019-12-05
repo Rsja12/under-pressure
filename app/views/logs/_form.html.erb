@@ -1,33 +1,11 @@
 
-<% if params[:dive_site_id] %>
+<%# <% if params[:dive_site_id] %>
 
     <%= form_for(@log) do |f| %>
 
-     <%= f.label :date %> 
-        <%= f.date_select :date %><br><br>  <%# Figure out how to remove hrs and min %>
-
-        <%= f.label :dive_buddy %>
-        <%= f.text_field :dive_buddy %><br><br>
-
-        <%= f.label :depth %> (ft.)
-        <%= f.number_field :depth %><br><br>
-
-        <%= f.label :dive_time %> (min.)
-        <%= f.number_field :dive_time %><br><br>
-
-        <%= f.label :visibility %> (ft.)
-        <%= f.number_field :visibility %><br><br>
-
-        <%= f.label :remarks %>
-        <%= f.text_area :remarks %><br><br>
-
-        <%= f.submit %>
-    <% end %>
-
+    <% if params[:dive_site_id] %>
+        <%= f.hidden_field :dive_site_id %>
     <% else %>
-
-    <%= form_for(@log) do |f| %>
-
         <h3>Select Dive Site</h3>
         <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
 
@@ -35,9 +13,10 @@
         <%= f.fields_for :dive_site do |ff| %>  
             <%= ff.label "Dive Site Name:" %>
             <%= ff.text_field :name %><br><br>
-        <% end %>                     
+        <% end %>           
+    <% end %>
 
-        <%= f.label :date %> 
+     <%= f.label :date %> 
         <%= f.date_select :date %><br><br>  
 
         <%= f.label :dive_buddy %>
@@ -56,10 +35,10 @@
         <%= f.text_area :remarks %><br><br>
 
         <%= f.submit %>
-    <% end %>   
+        
+    <% end %>
 
-
-<% end %>
+    
 
 
 

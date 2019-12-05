@@ -19,7 +19,6 @@ class LogsController < ApplicationController
     end
 
     def create
-        # byebug
         @log = Log.new(log_params)
         @log.user_id = current_user.id 
         if @log.save
