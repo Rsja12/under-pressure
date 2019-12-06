@@ -1,5 +1,5 @@
-
-    <%= form_for(@log) do |f| %>
+<%= render partial: 'layouts/errors', locals: {object: @log} %>
+<%= form_for(@log) do |f| %>
     <% if @dive_site %>
         <%= f.hidden_field :dive_site_id, value: @dive_site.id %>
     <% else %>
