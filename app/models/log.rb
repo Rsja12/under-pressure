@@ -8,6 +8,7 @@ class Log < ApplicationRecord
     validates :dive_time, presence: true
     validates :visibility, presence: true
     validates :remarks, presence: true
+    validate :future?
     
     accepts_nested_attributes_for :dive_site, :reject_if => proc { |attributes| attributes[:name].blank? }
 
@@ -20,4 +21,12 @@ class Log < ApplicationRecord
     def time
         self.date.strftime(" %b %e %Y")
     end
+
+    def future?
+        if self.date > Time.now
+            errors.add(:date, "must be valid")
+        end
+    end
+
+
 end
