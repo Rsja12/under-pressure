@@ -23,4 +23,3 @@ Confirm:
 
 * Add Edit and delete functionality for Dive Sites and Logs
 * Logs and Dive Sites are unique to each user
-* Deletes Logs from show page if divesite they belong to is deleted
