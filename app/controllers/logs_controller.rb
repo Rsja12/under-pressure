@@ -4,7 +4,7 @@ class LogsController < ApplicationController
         if @dive_site = DiveSite.find_by(id: params[:dive_site_id])
             @logs = @dive_site.logs
         else
-            @logs = Log.all 
+            @logs = current_user.logs  
         end
     end
 
@@ -18,7 +18,6 @@ class LogsController < ApplicationController
     end
     
     def create
-        # byebug
         @log = current_user.logs.build(log_params)
         if @log.save
             redirect_to log_path(@log)
