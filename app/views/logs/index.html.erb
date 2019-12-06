@@ -3,7 +3,7 @@
         <% @logs.each do |log| %>
             <%= link_to "#{log.id} - #{log.dive_site.name} - #{log.time}", log_path(log) %><br> 
     <% end %><br><br><br>
-    <%= link_to "New Log For This Dive Site", new_dive_site_log_path(@logs) %> 
+    <%= link_to "New Log For This Dive Site", new_dive_site_log_path(@dive_site) %> 
 <% else %>
     <h1>Check Out Your Dive Logs</h1> 
         <% @logs.each do |log| %>
