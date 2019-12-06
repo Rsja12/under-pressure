@@ -1,5 +1,5 @@
 class DiveSite < ApplicationRecord
-    has_many :logs, dependent: :destroy
+    has_many :logs, :dependent => :delete_all
     has_many :users, through: :logs 
 
 

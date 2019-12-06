@@ -20,3 +20,7 @@ Confirm:
 - [ ] Limited logic in controllers
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
+
+* Add Edit and delete functionality for Dive Sites and Logs
+* Logs and Dive Sites are unique to each user
+* Deletes Logs from show page if divesite they belong to is deleted

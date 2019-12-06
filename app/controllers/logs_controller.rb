@@ -13,10 +13,12 @@ class LogsController < ApplicationController
             @log = @dive_site.logs.build
         else
             @log = Log.new
+            @log.build_dive_site
         end
     end
     
     def create
+        # byebug
         @log = current_user.logs.build(log_params)
         if @log.save
             redirect_to log_path(@log)
