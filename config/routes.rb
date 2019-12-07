@@ -1,5 +1,13 @@
 Rails.application.routes.draw do
 
+  unauthenticated do
+    root :to => 'application#welcome'
+ end
+ 
+#  authenticated do
+#    root :to => 'dashboard#index'
+#  end
+
   resources :logs
 
   resources :dive_sites do
@@ -8,6 +16,6 @@ Rails.application.routes.draw do
   
   devise_for :users, :controllers => {registrations: 'registrations' }
   
-  root to: 'dive_sites#index'
+  # root to: 'dive_sites#index'
   
 end
