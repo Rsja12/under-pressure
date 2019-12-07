@@ -31,7 +31,28 @@ class LogsController < ApplicationController
         @log = Log.find_by(id: params[:id])
     end
 
+    def edit
+         #REFACTOR AND REVIEW 
+        @log = Log.find_by(id: params[:id])
+    end
+
+    def update
+        # REFACTOR
+        @log = Log.find_by(id: params[:id])
+        @log.update(log_params)
+        redirect_to log_path(@log)
+    end
+
+    def destroy
+        # FIX 
+        @log = Log.find_by(id: params[:id])
+        @log.destroy 
+        redirect_to logs_path
+    end
+
     private
+
+    # ADD SET_LOG METHOD
 
     def log_params
         params.require(:log).permit(:date, :remarks, :dive_buddy, :depth, :dive_time, :visibility, :user_id, :dive_site_id, dive_site_attributes: [:name] )
