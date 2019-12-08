@@ -9,6 +9,6 @@ Rails.application.routes.draw do
     resources :logs, only: [:index, :new]
   end
   
-  devise_for :users, :controllers => {registrations: 'registrations' }
+  devise_for :users, controllers: { omniauth_callbacks: 'callbacks' }
   
 end
