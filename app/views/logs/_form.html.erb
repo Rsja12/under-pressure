@@ -1,15 +1,18 @@
-<%= render partial: 'layouts/errors', locals: {object: @log} %>         
-<%= form_for(@log) do |f| %>
-    <% if @dive_site %>
-        <%= f.hidden_field :dive_site_id, value: @dive_site.id %>
-    <% else %>
-        <h3>Select Your Dive Site</h3>
-        <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
-        <h3>Or Add Your Own:</h3>
-        <%= f.fields_for :dive_site do |ff| %>  
-            <%= ff.label "Dive Site Name:" %>
-            <%= ff.text_field :name %><br><br>
-        <% end %>           
+<%= render partial: 'layouts/errors', locals: {object: @log} %>    
+
+    <%= form_for(@log) do |f| %>
+
+        <% if @dive_site %>
+            <%= f.hidden_field :dive_site_id, value: @dive_site.id %>
+        <% else %>
+            <h3>Select Your Dive Site</h3>
+            <%= f.collection_select :dive_site_id, DiveSite.all, :id, :name, prompt: "Choose a Dive Site" %> 
+            <h3>Or Add Your Own:</h3>
+            <%= f.fields_for :dive_site do |ff| %>  
+                <%= ff.label "Dive Site Name:" %>
+                <%= ff.text_field :name %><br><br>
+        <% end %>         
+
     <% end %>
 
      <%= f.label :date %> 
