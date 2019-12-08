@@ -7,6 +7,7 @@ class ApplicationController < ActionController::Base
     end
 
     def dashboard
+        @user = current_user
     end
 
 end
