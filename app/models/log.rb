@@ -27,6 +27,7 @@ class Log < ApplicationRecord
             errors.add(:date, "must be valid")
         end
     end
-
+    
+    # Add current_time class method
 
 end

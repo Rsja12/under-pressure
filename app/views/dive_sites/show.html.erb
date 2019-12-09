@@ -1,0 +1,10 @@
+<h2><%= @dive_site.name %></h2>
+<p>put optional site description here</p><br>
+
+<ol>
+    <% @dive_site.logs.each do |log| %>
+        <li><%= link_to log.time, log_path(log) %></li>
+    <%end%>
+</ol>
+
+<%= link_to "Create new log for this site", new_dive_site_log_path(@dive_site) %>

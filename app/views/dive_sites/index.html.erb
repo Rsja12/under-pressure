@@ -1,8 +1,9 @@
-<h2>Check out your logs for these dive sites!</h2>
+<h2>Click on each site to see your logs for them</h2>
     <ol>
     <% @dive_sites.each do |site| %>
-        <li><%= link_to site.name, dive_site_logs_path(site) %></li>
+        <li><%= link_to site.name, dive_site_path(site) %></li>
     <% end %>
     </ol><br><br>
-<h3>Log A New Dive <%= link_to "Here", new_log_path %></h3>
-<h3>See Complete List Of Logs <%= link_to "Here", logs_path %></h3>
+
+<h3>Log a dive for a new site <%= link_to "Here", new_log_path %></h3>
+

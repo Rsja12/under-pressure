@@ -44,7 +44,7 @@ class LogsController < ApplicationController
     end
 
     def destroy
-        # FIX 
+        # FIX THIS ASAPPPP OTHERWISE OTHER SHIT BREAKS
         @log = Log.find_by(id: params[:id])
         @log.destroy 
         redirect_to logs_path

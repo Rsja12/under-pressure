@@ -1,1 +1,6 @@
-<h1>Welcome <%= @user.first_name %></h1>
+<h1>Welcome to your dashboard<%= @user.first_name %></h1><br>
+
+<h3>Click <%= link_to "here", logs_path %> to see a list of all of your logs </h3>
+<h3>Click <%= link_to "here", dive_sites_path %> to see a list of the dive sites you've been to </h3>
+<h3>Click <%= link_to "here", new_log_path %> to log a new dive </h3>
+
