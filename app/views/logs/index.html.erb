@@ -1,4 +1,4 @@
-<h1>Check Out Your Dive Logs</h1> 
+<h1>Your Logs</h1> 
 
 <% @logs.each do |log| %>
     <%= link_to "#{log.time}", log_path(log) %><br>

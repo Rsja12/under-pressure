@@ -23,10 +23,6 @@ Confirm:
 
 * Fix google sign in so that a user can sign up with a different google account
 * Fix registration first and last name
-* do README
-* Fix delete functionality for logs
-* Update dive_sites_path
-* Update logs_path
-* Update user home page
+* do README installation
 * Add user 'my profile' links where they can edit or delete their account
 
