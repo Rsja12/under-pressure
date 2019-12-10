@@ -21,6 +21,7 @@ Confirm:
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
 
+* Fix google sign in so that a user can sign up with a different google account
 * Fix registration first and last name
 * do README
 * Fix delete functionality for logs
