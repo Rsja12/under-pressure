@@ -1,3 +1,5 @@
 <h1>These dives had awesome visibility!</h1>
 
-<%= render partial: 'filtered' %>
+<ol><% @logs.each do |log| %>
+    <li><%= link_to "#{log.time} - #{log.dive_site.name}", log_path(log) %></li>
+<% end %></ol>

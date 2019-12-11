@@ -12,6 +12,8 @@ class Log < ApplicationRecord
     
     accepts_nested_attributes_for :dive_site, :reject_if => proc { |attributes| attributes[:name].blank? }
 
+    scope :good_vis, -> { where('visibility > ?', 75) }
+
     def dive_site_attributes=(attributes = {})
         if attributes[:name].present?
             self.dive_site = DiveSite.find_or_create_by(attributes)
@@ -27,15 +29,6 @@ class Log < ApplicationRecord
             errors.add(:date, "must be valid")
         end
     end
-
-    def self.last_5
-        order("created_at desc").limit(5)
-    end
-
-    def self.good_vis
-        where("visibility > ?", 80)
-    end
-
 
     # def self.month
     #     # where("cast(strftime('%m', date) as int) = ?", [:month])
