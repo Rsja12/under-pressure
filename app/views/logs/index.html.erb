@@ -1,7 +1,13 @@
 <h1>Your Logs</h1> 
 
+<%# <h3>Filter logs by month:</h3> %>
+  <%# form_tag("/logs/month", method: "get") do %>
+    <%# select_month(Date.current) %>
+    <%# submit_tag "Filter" %>
+  <%# end %><br>
+
 <% @logs.each do |log| %>
-    <%= link_to "#{log.time}", log_path(log) %><br>
+    <%= link_to "#{log.time} - #{log.dive_site.name}", log_path(log) %><br>
 <% end %><br>
 
 <h3>Click <%= link_to "here", new_log_path %> log a new dive </h3>

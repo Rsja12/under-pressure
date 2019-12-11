@@ -1,0 +1,3 @@
+<ol><% @logs.each do |log| %>
+    <li><%= link_to log.time, log_path(log) %></li>
+<% end %></ol>

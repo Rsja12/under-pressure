@@ -44,6 +44,15 @@ class LogsController < ApplicationController
         redirect_to logs_path
     end
 
+    def recent
+        @logs = Log.last_5 
+    end
+
+    def vis
+        @logs = Log.good_vis 
+    end
+    
+
     private
 
     def set_log

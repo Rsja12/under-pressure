@@ -27,7 +27,24 @@ class Log < ApplicationRecord
             errors.add(:date, "must be valid")
         end
     end
+
+    def self.last_5
+        order("created_at desc").limit(5)
+    end
+
+    def self.good_vis
+        where("visibility > ?", 80)
+    end
+
+
+    # def self.month
+    #     # where("cast(strftime('%m', date) as int) = ?", [:month])
+    #     # where('extract(month from date) = ?', [:month])
+    #     # where(:date => [:month])
+    #     # where('date = ?', [:month])
+    # #    where('month from select_month = ?', [:month])
+    #     # find_by_date([:select_month][:month])
+    # end
     
-    # Add current_time class method
 
 end
