@@ -1,5 +1,17 @@
 <h1>Welcome to your dashboard<%= @user.first_name %></h1><br>
 
+
+<h3>Search for a dive site</h3>
+<%= form_tag(dashboard_path, method: 'get') do %>
+    <%= text_field_tag :search, params[:search] %>
+    <%= submit_tag 'Look up!' %>
+<% end %>
+
+<% if @site %>
+    <%= link_to @site.name, dive_site_path(@site) %>
+<% end %>
+
+
 <h3>Click <%= link_to "here", logs_path %> to see a list of all of your logs </h3>
 <h3>Click <%= link_to "here", dive_sites_path %> to see a list of the dive sites you've been to </h3>
 <h3>Click <%= link_to "here", logs_vis_path %> to see your dives with awesome visibility! </h3>

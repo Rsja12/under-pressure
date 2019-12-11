@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
 
     def dashboard
         @user = current_user
+        @site = DiveSite.try(:find_by, name: params[:search])
     end
 
 end

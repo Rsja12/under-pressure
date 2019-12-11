@@ -1,4 +1,5 @@
 <h2>Click on each site to see your logs for them</h2>
+
     <ol>
     <% @dive_sites.each do |site| %>
         <li><%= link_to site.name, dive_site_path(site) %></li>
