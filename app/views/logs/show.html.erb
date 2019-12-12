@@ -1,4 +1,4 @@
-<h2>Dive Site: <%= @log.dive_site.name %></h3>
+<h2>Dive Site: <%= link_to @log.dive_site.name, dive_site_path(@log.dive_site) %></h3>
 <h3>Date: <%= @log.time %></h3><br>
 
 Buddy: <%= @log.dive_buddy %><br>

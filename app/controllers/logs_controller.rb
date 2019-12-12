@@ -4,11 +4,11 @@ class LogsController < ApplicationController
     before_action :set_log, except: [:index, :new, :create]
 
     def index
-        if @dive_site = DiveSite.find_by(id: params[:dive_site_id])
-            @logs = @dive_site.logs
-        else
+        # if @dive_site = DiveSite.find_by(id: params[:dive_site_id])
+        #     @logs = @dive_site.logs
+        # else
             @logs = current_user.logs  
-        end
+        # end
     end
 
     def new
@@ -31,7 +31,6 @@ class LogsController < ApplicationController
     end
     
     def show
-        
     end
 
     def edit
