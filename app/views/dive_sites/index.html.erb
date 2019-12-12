@@ -1,12 +1,10 @@
 <h2>Click on each site to see your logs for each one</h2>
 
-    <% if current_user %>
     <ol>
     <% @dive_sites.each do |site| %>
         <li><%= link_to site.name, dive_site_path(site) %></li>
     <% end %>
     </ol><br><br>
-    <% end %>
 
 <h3>Log a dive for a new site <%= link_to "Here", new_log_path %></h3>
 
