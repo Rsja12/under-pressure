@@ -1,20 +1,22 @@
 <h1>Welcome to your dashboard<%= @user.first_name %></h1><br>
 
+<%#   Eventually put in search field for divesites with geolocation?  %>
 
-<h3>Search for a dive site</h3>
-<%= form_tag(dashboard_path, method: 'get') do %>
-    <%= text_field_tag :search, params[:search] %>
-    <%= submit_tag 'Look up!' %>
-<% end %>
+<%# <h3>Look for one of the dive sites you've been to!</h3> %>
+<%# form_tag(dashboard_path, method: 'get') do %>
+    <%# text_field_tag :search, params[:search] %>
+    <%# submit_tag 'Find!' %>
+<%# end %>
 
-<% if @site %>
-    <%= link_to @site.name, dive_site_path(@site) %>
-<% end %>
+<%# if @site %>
+    <%#link_to @site.name, dive_site_path(@site) %>
+<%# end %>
 
 
 <h3>Click <%= link_to "here", logs_path %> to see a list of all of your logs </h3>
 <h3>Click <%= link_to "here", dive_sites_path %> to see a list of the dive sites you've been to </h3>
-<h3>Click <%= link_to "here", logs_vis_path %> to see your dives with awesome visibility! </h3>
+<h3>Click <%= link_to "here", logs_vis_path %> to see your dives that had awesome visibility! </h3>
 <h3>Click <%= link_to "here", new_log_path %> to log a new dive </h3>
 
 
+<%#  Give user the ability to edit their profile (edit, delete account)  %>

@@ -1,4 +1,6 @@
 class LogsController < ApplicationController
+    
+    before_action :authorized?, except: [:index, :new, :create, :vis]
     before_action :set_log, except: [:index, :new, :create]
 
     def index
@@ -29,6 +31,7 @@ class LogsController < ApplicationController
     end
     
     def show
+        
     end
 
     def edit
@@ -45,10 +48,16 @@ class LogsController < ApplicationController
     end
 
     def vis
-        @logs = Log.good_vis 
+        @logs = Log.good_vis(current_user.id)
     end
     
     private
+
+    def authorized?
+        if current_user != Log.find_by(id: params[:id]).user
+            redirect_to root_path
+        end
+    end
 
     def set_log
         @log = Log.find_by(id: params[:id])

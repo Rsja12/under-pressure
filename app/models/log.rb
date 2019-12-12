@@ -12,7 +12,7 @@ class Log < ApplicationRecord
     
     accepts_nested_attributes_for :dive_site, :reject_if => proc { |attributes| attributes[:name].blank? }
 
-    scope :good_vis, -> { where('visibility > ?', 75) }
+    scope :good_vis, lambda { |id| where('visibility > ?', 75).where('user_id == ?', id) }
 
     def dive_site_attributes=(attributes = {})
         if attributes[:name].present?

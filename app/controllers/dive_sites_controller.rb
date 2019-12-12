@@ -7,5 +7,5 @@ class DiveSitesController < ApplicationController
     def show
         @dive_site = DiveSite.find_by(id: params[:id])
     end
-    
+
 end

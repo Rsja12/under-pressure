@@ -21,8 +21,5 @@ Confirm:
 - [ ] Views use helper methods if appropriate
 - [ ] Views use partials if appropriate
 
-* Fix google sign in so that a user can sign up with a different google account
-* Fix registration first and last name
-* do README installation
-* Add user 'my profile' links where they can edit or delete their account
-
+* why does adding a log for the same dive site create a new instance of dive_site?
+* CanCanCan
